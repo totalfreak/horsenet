@@ -49,4 +49,16 @@ $(document).ready(function() {
     }
     }
   });
+  ref.limitToLast(50).on("child_added", function(snapshot) {
+    var snap = snapshot.val();
+    var id = snapshot.val().id;
+    console.log(id);
+    var image = snapshot.val().image;
+    console.log(image);
+    var text = snapshot.val().text;
+    console.log(text);
+    var title = snapshot.val().title;
+    console.log(title);
+    $(".boardCont").append('<div class="postCont"><p class="postTitle"><span class="name">Anonymous ID: 15155 '+title+'</p><img class="postImg" src="' + image + '"><p class="postText">' + text + '</p></div>');
+  });
 });

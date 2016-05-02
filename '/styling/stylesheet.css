@@ -116,9 +116,9 @@ button {
   margin-left: 60px;
 }
 .postImg {
-  width: 64px;
-  height: 64px;
-  position: absolute;
+  width: 128px;
+  height: auto;
+  position: relative;
   left: 10px;
 }
 .postText {
