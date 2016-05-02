@@ -12,8 +12,22 @@
     <center><h1 id="boardTitle">/pol/</h1></center>
     <center><img id="boardImg" src="Pictures/boardImg.png"></center>
     <div class="boardCont">
-      <center><h2 class="startPost">Start a new thread</h2></center>
+      <center><a href="#" id="startPost"><h2 class="startPost">Start a new thread</h2></a></center>
       <br>
+      <div id="startOverlap"></div>
+      <center><div id="startCont">
+        <button id="leaveStart">
+          x
+        </button>
+        Title: <input id="startTitle" type="text" placeholder="Insert Title here"></input>
+        <br>
+        Text: <input id="startText" type="text" placeholder="Insert you text here"></input>
+        <br>
+        <span id="upText">Image:</span> <button id="upButt" onclick="document.getElementById('upImg').click();">click</button>
+        <input id="upImg" style="visibility: collapse; width: 0px;" type="file" onchange="upload(this.files[0])">
+        <img id="upPreview"></img>
+        <button id="postButt">Post</button>
+      </div></center>
       <div class="postCont">
         <p class="postTitle"><span class="name">Anonymous ID: 15151 Why must niggers be black?</span> <span class=""ID: 15151 Why most niggers be black!?</p>
         <img class="postImg" src="image.png">
