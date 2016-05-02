@@ -8,14 +8,26 @@
 body {
   background-color: #FFFFEE;
 }
+#boardTitle {
+  font-size: 36px;
+  padding-top: 10px;
+  color: #8A0101;
+}
+#boardImg {
+  width: 400px;
+  height: 125px;
+}
 .boardCont {
   width: 100%;
   height: auto;
-  margin-top: 150px;
+  margin-top: 100px;
+}
+.startPost {
+  color: #8A0101;
 }
 .postCont {
   margin-left: 1%;
-  width: 98%;
+  width: 97%;
   height: auto;
   border-top: 2px solid #D9BFB7;
   padding-top: 10px;
@@ -24,13 +36,38 @@ body {
   padding-right: 20px;
   margin-bottom: 10px;
 }
+.postTitle {
+  color: #8A0101;
+  margin-left: 60px;
+}
 .postImg {
   width: 64px;
   height: 64px;
-  position: relative;
+  position: absolute;
+  left: 10px;
 }
 .postText {
+  font-size: 17px;
   position: relative;
   padding-left: 10px;
+  margin-left: 55px;
   max-width: 90%;
+  min-height: 64px;
+  line-height: 22px;
+}
+.postReply {
+  width: 400px;
+  height: 100px;
+  background-color: #F0E0D6;
+  border: 1px solid #D9BFB7;
+  margin-left: 64px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  padding: 5px;
+}
+.replyTitle {
+  font-size: 17px;
+}
+.replyText {
+  font-size: 17px;
 }
