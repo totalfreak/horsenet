@@ -23,6 +23,7 @@ function upload(file) {
 $(document).ready(function() {
   console.log(fileUpload);
   var ref = new Firebase("https://horsenet.firebaseio.com/posts/");
+  var rootRef = new Firebase("https://horsenet.firebaseio.com")
     $("#startPost").click(function() {
       $("#startOverlap").css({opacity: 0.7, zIndex: 1});
       $("#startCont").css({opacity: 0.8, zIndex: 1});
@@ -39,12 +40,20 @@ $(document).ready(function() {
       var title = $("#startTitle").val();
       var img = imgLink;
       console.log(fileUpload);
+      rootRef.on("value", function(snapshot) {
+        id = snapshot.val().id;
+      });
       if($("#startText").val() != "" && $("#startTitle").val() != "") {
       ref.push({
         text: text,
         title: title,
-        image: img
+        image: img,
+        id: id+=1
       });
+      rootRef.update({
+        id: id+=1
+      });
+      console.log(id);
       location.reload(true);
     }
     }
@@ -59,6 +68,12 @@ $(document).ready(function() {
     console.log(text);
     var title = snapshot.val().title;
     console.log(title);
-    $(".boardCont").append('<div class="postCont"><p class="postTitle"><span class="name">Anonymous ID: 15155 '+title+'</p><img class="postImg" src="' + image + '"><p class="postText">' + text + '</p></div>');
+    var replyText = snapshot.val().replies.text;
+    var replyId = snapshot.val().replies.id;
+    $(".boardCont").append('<div class="postCont"><p class="postTitle"><span class="name">Anonymous ID: '+id+' '+title+'</p><img class="postImg" src="' + image + '"><p class="postText">' + text + '</p><a href="#/" id="'+id+'" class="replyLink">Reply</a><div class="postReply"><p class="replyTitle">Anonymous ID: '+replyId+'</p><p class="replyText">'+replyText+'</p></div></div>');
+  });
+  $("a").click(function() {
+    var replyLink = "Shit";//$(this).attr("id");
+    console.log(replyLink);
   });
 });

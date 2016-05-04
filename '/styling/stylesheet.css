@@ -113,19 +113,19 @@ button {
 }
 .postTitle {
   color: #8A0101;
-  margin-left: 60px;
+  margin-left: 30px;
 }
 .postImg {
   width: 128px;
   height: auto;
   position: relative;
-  left: 10px;
+  left: 30px;
 }
 .postText {
   font-size: 17px;
   position: relative;
   padding-left: 10px;
-  margin-left: 55px;
+  margin-left: 30px;
   max-width: 90%;
   min-height: 64px;
   line-height: 22px;
