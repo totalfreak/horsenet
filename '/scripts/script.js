@@ -70,7 +70,7 @@ $(document).ready(function() {
     console.log(title);
     var replyText = snapshot.val().replies.text;
     var replyId = snapshot.val().replies.id;
-    $(".boardCont").append('<div class="postCont"><p class="postTitle"><span class="name">Anonymous ID: '+id+' '+title+'</p><img class="postImg" src="' + image + '"><p class="postText">' + text + '</p><a href="#/" id="'+id+'" class="replyLink">Reply</a><div class="postReply"><p class="replyTitle">Anonymous ID: '+replyId+'</p><p class="replyText">'+replyText+'</p></div></div>');
+    $(".boardCont").append('<div id="post_'+id+'"class="postCont"><p class="postTitle"><span class="name">Anonymous ID: '+id+' '+title+'</p><img class="postImg" src="' + image + '"><p class="postText">' + text + '</p><a href="#/" id="reply_'+id+'" class="replyLink">Reply</a><div class="postReply"><p class="replyTitle">Anonymous ID: '+replyId+'</p><p class="replyText">'+replyText+'</p></div></div>');
   });
   $("a").click(function() {
     var replyLink = $(this).attr("id");
